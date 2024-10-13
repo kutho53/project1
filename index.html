@@ -8,7 +8,21 @@
     <script src="javascript.js"></script>
 </head>
 <body>
-    <button type="button" onclick="fetchData()">Show Games</button>
+    <div class="topNav">
+        <h1 id="title">Cheap Shark Deal Finder</h1>
+    <div class="search-bar-container">
+        <form id="searchForm">
+            <label for="searchInput">Search games:</label>
+            <input type="text" id="searchInput" name="fetch" required>
+            <button type="submit">Find games</button>
+        </form>
+        <div class="wishlist-Button">
+            <button>Add to Wishlist</button>
+        </div>
+    </div>
+    </div>
+    <button id="show-game-button"type="button" onclick="fetchData()">Show Games</button>
+    
 
 <div id="apiResponse">
     
