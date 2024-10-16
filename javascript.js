@@ -1,4 +1,5 @@
 const apiUrl = 'https://www.cheapshark.com/api/1.0/deals?pageSize=9';
+//Added functionality to wishlist append & for local storage
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
 function addToWishList(game) {
