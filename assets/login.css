@@ -1,5 +1,10 @@
 body {
-    background-color: #020e13
+    background-image: url(gamingwebpage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: saturation;
   }
   
   button {
@@ -7,9 +12,9 @@ body {
       margin: 24px;
       cursor: pointer;
       font-size: 24px;
-      background-color: #54c0ef;
       color: rgb(201, 183, 183);
     }
+    
 
   input {
     background-color: #f7f7f7;
@@ -24,10 +29,11 @@ body {
       margin: 60px auto;
       text-align: center;
       font-family: Georgia, 'Times New Roman', Times, serif;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      color: rgb(237, 87, 87);
+      box-shadow: 0 4px 8px 0 rgb(241, 237, 237);
       transition: 0.3s;
       width: 40vw;
-      background-color: #ead282;
+      
     }
   
   .card-contents {

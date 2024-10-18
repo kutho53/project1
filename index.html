@@ -11,15 +11,14 @@
 <body>
     <div class="topNav">
         <h1 id="title">Cheap Shark Deal Finder</h1>
-        <a href="wishlist.html">My Wishlist</a>
+        <a href="wishlist.html">
+            <button>My Wishlist</button>
+        </a>
     <div class="search-bar-container">
         <div id="searchForm">
             <label for="searchInput">Search games:</label>
             <input type="text" id="searchInput" name="fetch">
             <button onclick="fetchSearchData()">Find games</button>
-        </div>
-        <div class="wishlist-Button">
-            <button>Add to Wishlist</button>
         </div>
     </div>
     </div>
@@ -29,7 +28,12 @@
 <div id="apiResponse"> 
 </div>
 <footer>
-    <a href="login.html">Login </a> 
+    <div class="wishlist-Button">
+        <button>Add to Wishlist</button>
+    </div>
+    <a href="login.html">
+        <button>Login</button> 
+    </a> 
 </footer>
 </body>
 </html>
