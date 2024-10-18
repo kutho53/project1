@@ -1,0 +1,36 @@
+body {
+    background-image: url(gamingwebpage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: saturation;
+}
+
+#title{
+    display: block;
+    margin: 60px auto;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(245, 80, 80);
+    box-shadow: 0 4px 8px 0 rgb(241, 237, 237);
+    transition: 0.3s;
+    width: 100vw;
+}
+
+button {
+    padding: 10px;
+    margin: 24px;
+    cursor: pointer;
+    font-size: 24px;
+    color: rgb(226, 12, 12);
+    background-image: -moz-linear-gradient();
+  }
+
+ label{
+    padding: 10px;
+    margin: 24px;
+    font-size: 24px;
+    color: rgb(226, 12, 12);
+    background-image: -moz-linear-gradient();
+ }
