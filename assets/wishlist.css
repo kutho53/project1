@@ -1,0 +1,29 @@
+.wishlist-box {
+    border: 1px solid #ddd;   /* Light border around the container */
+    border-radius: 8px;       /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;            /* Padding inside the box */
+}
+
+
+.wishlist-box .wishlist-game {
+    flex: 1 1 30%;            /* Flex-grow, flex-shrink, and flex-basis for responsive sizing */
+    margin: 10px;             /* Margin around each game */
+    padding: 15px;            /* Internal padding for game box */
+    border: 1px solid #ccc;   /* Border around each game box */
+    border-radius: 8px;       /* Rounded corners */
+    background-color: #fff;   /* White background for each game */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.game-image{
+width: 150px;
+}
+.sale-price{
+font-size: 18px;
+}
+
+
+.normal-price {
+    text-decoration: line-through; 
+}
