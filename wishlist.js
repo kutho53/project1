@@ -14,24 +14,28 @@
 
         wishlist.forEach(game => {
         const gameContainer = document.createElement("div");
-        gameContainer.classList.add('wishlist-game'); 
+        gameContainer.classList.add('wishlist-game','card','mb-3','p-3','shadow-sm'); 
 
             const img = document.createElement('img');
             img.src = game.image;
             img.alt = game.title;
             img.style.width = '100px';
+            img.classList.add('game-img');
             gameContainer.appendChild(img);
 
             const gameTitle = document.createElement("p");
             gameTitle.innerText = `Title: ${game.title}`;
+            gameTitle.classList.add('game-title');
             gameContainer.appendChild(gameTitle);
 
             const gameSalePrice = document.createElement("p");
             gameSalePrice.innerText = `Sale Price: $${game.salePrice}`;
+            gameSalePrice.classList.add('sale-price','text-danger');
             gameContainer.appendChild(gameSalePrice);
 
             const gameNormalPrice = document.createElement("p");
             gameNormalPrice.innerText = `Normal Price: $${game.normalPrice}`;
+            gameNormalPrice.classList.add('normal-price','text-muted');
             gameContainer.appendChild(gameNormalPrice);
 
             wishlistDiv.appendChild(gameContainer);
