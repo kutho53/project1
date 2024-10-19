@@ -70,3 +70,39 @@ function fetchSearchData(){
     const apiUrlSearch = `https://www.cheapshark.com/api/1.0/deals?pageSize=9&title=${searchInput.value}`;
     fetchData(apiUrlSearch);
 }
+
+
+    function fetchData(url) {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayData(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+
+    function displayData(data) {
+        const apiResponseDiv = document.getElementById('apiResponse');
+        apiResponseDiv.innerHTML = ''; // Clear previous content
+
+        // Assuming data is an array of games
+        data.forEach(game => {
+            const gameDiv = document.createElement('div');
+            gameDiv.classList.add('game-item'); // Add a class for styling if needed
+
+            // Customize the content based on your API response structure
+            gameDiv.innerHTML = `
+                <h3>${game.title}</h3>
+                <p>${game.description}</p>
+            `;
+
+            apiResponseDiv.appendChild(gameDiv);
+        });
+    }

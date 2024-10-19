@@ -27,3 +27,11 @@ font-size: 18px;
 .normal-price {
     text-decoration: line-through; 
 }
+
+body {
+    background-image: url(gamingwebpage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}

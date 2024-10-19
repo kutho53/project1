@@ -4,7 +4,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    background-blend-mode: saturation;
 }
 
 #title{
@@ -34,3 +33,23 @@ button {
     color: rgb(226, 12, 12);
     background-image: -moz-linear-gradient();
  }
+
+ #apiResponse {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.game-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+.game-image{
+    width: 150px;
+}
+    
+.sale-price{
+    font-size: 18px;
+}
+    
