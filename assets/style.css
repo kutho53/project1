@@ -1,3 +1,4 @@
+
 body {
     background-image: url(gamingwebpage.jpg);
     background-repeat: no-repeat;
@@ -6,50 +7,91 @@ body {
     background-size: cover;
 }
 
-#title{
-    display: block;
-    margin: 60px auto;
-    text-align: left;
+#title {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(245, 80, 80);
+    margin-left: 15px;
     box-shadow: 0 4px 8px 0 rgb(241, 237, 237);
     transition: 0.3s;
-    width: 100vw;
+    white-space: nowrap;
 }
+#apiResponse { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 10px; }
 
-button {
-    padding: 10px;
-    margin: 24px;
+
+button, .custom-btn {
+    padding: 8px; 
+    margin: 0 10px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px; 
     color: rgb(226, 12, 12);
     background-image: -moz-linear-gradient();
-  }
-
- label{
-    padding: 10px;
-    margin: 24px;
-    font-size: 24px;
-    color: rgb(226, 12, 12);
-    background-image: -moz-linear-gradient();
- }
-
- #apiResponse {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.game-item {
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 1px solid rgba(226, 12, 12, 0.5);
     border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
 }
-.game-image{
-    width: 150px;
+
+
+button:hover, .custom-btn:hover {
+    background-color: rgba(226, 12, 12, 0.1);
 }
-    
-.sale-price{
+
+
+label {
     font-size: 18px;
+    color: rgb(226, 12, 12);
 }
+
+
+.topNav {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin: 0;
+}
+
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+}
+
+input.form-control {
+    width: 200px; 
+    margin-right: 5px;  
+}
+
+@media (max-width: 768px) {
     
+    .topNav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar-container {
+        margin-top: 10px;
+    }
+
+    #title {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
