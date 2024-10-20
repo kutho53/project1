@@ -1,37 +1,75 @@
-.wishlist-box {
-    border: 1px solid #ddd;   /* Light border around the container */
-    border-radius: 8px;       /* Rounded corners */
-    background-color: #f9f9f9; /* Light background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px;            /* Padding inside the box */
-}
-
-
-.wishlist-box .wishlist-game {
-    flex: 1 1 30%;            /* Flex-grow, flex-shrink, and flex-basis for responsive sizing */
-    margin: 10px;             /* Margin around each game */
-    padding: 15px;            /* Internal padding for game box */
-    border: 1px solid #ccc;   /* Border around each game box */
-    border-radius: 8px;       /* Rounded corners */
-    background-color: #fff;   /* White background for each game */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-.game-image{
-width: 150px;
-}
-.sale-price{
-font-size: 18px;
-}
-
-
-.normal-price {
-    text-decoration: line-through; 
-}
-
-body {
+.wishlist-page {
     background-image: url(gamingwebpage.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+}
+
+.custom-btn {
+    padding: 8px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(226, 12, 12);
+    background-image: -moz-linear-gradient();
+    border: 1px solid rgba(226, 12, 12, 0.5);
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+.custom-btn:hover {
+    background-color: rgba(226, 12, 12, 0.1);
+}
+
+.wishlist-box {
+    border: 1px solid #ddd;   
+    border-radius: 8px;      
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+}
+
+.wishlist-box .wishlist-game {
+    flex: 1 1 30%;            
+    margin: 10px;             
+    padding: 15px;            
+    border: 1px solid #ccc;  
+    border-radius: 8px;      
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.game-image {
+    width: 150px;
+}
+
+.sale-price {
+    font-size: 18px;
+}
+
+.normal-price {
+    text-decoration: line-through; 
+}
+
+h1, h2 {
+    color: rgb(245, 80, 80);
+}
+
+.wishlist-header {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 32px;
+}
+
+.topNav {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
