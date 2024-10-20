@@ -36,7 +36,7 @@ button {
 
  #apiResponse {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 10px;
 }
 
@@ -44,12 +44,16 @@ button {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
+    background-color: rgb(199, 199, 199);
 }
 .game-image{
-    width: 150px;
+    width: 300px;
 }
     
 .sale-price{
     font-size: 18px;
 }
-    
+ 
+.game-title{
+    font-size: 24px;
+}

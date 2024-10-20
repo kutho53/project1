@@ -34,32 +34,38 @@ function fetchData(api) {
             apiResponseDiv.removeChild(apiResponseDiv.firstChild);
         }
         data.forEach(element => {
+            const gameDiv = document.createElement('div');
+            gameDiv.classList.add('game-item');
+
             const newTitle = document.createElement("p");
             newTitle.innerText = element.title;
-            apiResponseDiv.appendChild(newTitle);
+            newTitle.classList.add('game-title');
+            gameDiv.appendChild(newTitle);
 
             const img = document.createElement('img');
             img.src = element.thumb;
-            apiResponseDiv.appendChild(img)
+            img.classList.add('game-image');
+            gameDiv.appendChild(img)
 
             const salePrice = document.createElement("p");
-            salePrice.innerText = element.salePrice;
-            apiResponseDiv.appendChild(salePrice)
+            salePrice.innerText = `Sale Price: ${element.salePrice}`;
+            salePrice.classList.add('sale-price');
+            gameDiv.appendChild(salePrice)
 
             const normalPrice = document.createElement("p");
-            normalPrice.innerText = element.normalPrice;
-            apiResponseDiv.appendChild(normalPrice)
+            normalPrice.innerText = `Normal Price: ${element.normalPrice}`;
+            normalPrice.classList.add('sale-price');
+            gameDiv.appendChild(normalPrice)
 
             const wishlistButton = document.createElement("button");
             wishlistButton.innerText = "Add to Wishlist";
             wishlistButton.addEventListener('click', function() {
                 addToWishList(element);  
             });
-            apiResponseDiv.appendChild(wishlistButton);
-
             
+            gameDiv.appendChild(wishlistButton);
             
-            
+            apiResponseDiv.appendChild(gameDiv)
         });
     })
 }
@@ -70,39 +76,3 @@ function fetchSearchData(){
     const apiUrlSearch = `https://www.cheapshark.com/api/1.0/deals?pageSize=9&title=${searchInput.value}`;
     fetchData(apiUrlSearch);
 }
-
-
-    function fetchData(url) {
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                displayData(data);
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-    }
-
-    function displayData(data) {
-        const apiResponseDiv = document.getElementById('apiResponse');
-        apiResponseDiv.innerHTML = ''; // Clear previous content
-
-        // Assuming data is an array of games
-        data.forEach(game => {
-            const gameDiv = document.createElement('div');
-            gameDiv.classList.add('game-item'); // Add a class for styling if needed
-
-            // Customize the content based on your API response structure
-            gameDiv.innerHTML = `
-                <h3>${game.title}</h3>
-                <p>${game.description}</p>
-            `;
-
-            apiResponseDiv.appendChild(gameDiv);
-        });
-    }
