@@ -7,6 +7,9 @@ const submissionResponseEl = document.querySelector('#response');
 function showResponse(event) {
   // Prevent default action
   event.preventDefault();
+   // Store the name and email in local storage
+   localStorage.setItem('name', nameInput.value);
+   localStorage.setItem('email', emailInput.value);
   console.log(event);
   const response =
     'Thank you  ' +
