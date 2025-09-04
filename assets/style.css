@@ -103,17 +103,31 @@ input.form-control {
 }
 
 .game-item {
-    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid #080808;
     padding: 10px;
-    border-radius: 5px;
-    background-color: rgb(199, 199, 199);
+    border-radius: 25px;
+    /* background-color: rgb(37, 184, 189); */
+    background: radial-gradient(circle at center, #e0e7ef 0%, #7fa7d6 40%, #4b6584 70%, #2c3e50 100%);
 }
 .game-image{
     width: 300px;
+    border-radius: 25px;
+    border: 1px solid #080808;
 }
     
 .sale-price{
-    font-size: 18px;
+    font-size: 28px;
+}
+
+.normal-price {
+    font-size: 24px;
+    color: red;
+    text-decoration: line-through;
 }
  
 .game-title{

@@ -1,4 +1,4 @@
-const apiUrl = 'https://www.cheapshark.com/api/1.0/deals?pageSize=9';
+const apiUrl = 'https://www.cheapshark.com/api/1.0/deals?pageSize=32';
 //Added functionality to wishlist append & for local storage
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
@@ -17,7 +17,7 @@ function addToWishList(game) {
         
         localStorage.setItem('wishlist', JSON.stringify(wishlist));
         
-        localStorage.setItem('Totalgamesinwishlist', wishlist.length);
+        localStorage.setItem('totalGamesInWishlist', wishlist.length);
     } else {
         console.log("Game already in wishlist:", game.title);
     }
@@ -31,8 +31,10 @@ function fetchData(api) {
     .then(data => {
         const apiResponseDiv = document.getElementById('apiResponse')
         while (apiResponseDiv.firstChild) {
+            //removes any item inside div from previous search
             apiResponseDiv.removeChild(apiResponseDiv.firstChild);
         }
+        //loops through each game and creates html elements for each
         data.forEach(element => {
             const gameDiv = document.createElement('div');
             gameDiv.classList.add('game-item');
@@ -47,15 +49,15 @@ function fetchData(api) {
             img.classList.add('game-image');
             gameDiv.appendChild(img)
 
+            const normalPrice = document.createElement("p");
+            normalPrice.innerText = `Normal Price: ${element.normalPrice}`;
+            normalPrice.classList.add('normal-price');
+            gameDiv.appendChild(normalPrice)
+
             const salePrice = document.createElement("p");
             salePrice.innerText = `Sale Price: ${element.salePrice}`;
             salePrice.classList.add('sale-price');
             gameDiv.appendChild(salePrice)
-
-            const normalPrice = document.createElement("p");
-            normalPrice.innerText = `Normal Price: ${element.normalPrice}`;
-            normalPrice.classList.add('sale-price');
-            gameDiv.appendChild(normalPrice)
 
             const wishlistButton = document.createElement("button");
             wishlistButton.innerText = "Add to Wishlist";
@@ -65,6 +67,7 @@ function fetchData(api) {
             
             gameDiv.appendChild(wishlistButton);
             
+            //adds each game into div element
             apiResponseDiv.appendChild(gameDiv)
         });
     })
@@ -72,7 +75,7 @@ function fetchData(api) {
 
 //Search bar code.
 function fetchSearchData(){
-    const searchInput = document.getElementById('searchInput');
-    const apiUrlSearch = `https://www.cheapshark.com/api/1.0/deals?pageSize=9&title=${searchInput.value}`;
-    fetchData(apiUrlSearch);
+    const searchInput = document.getElementById('searchInput'); //grabs user input from search bar
+    const apiUrlSearch = `https://www.cheapshark.com/api/1.0/deals?pageSize=36&title=${encodeURIComponent(searchInput.value)}`; //adds user input to url
+    fetchData(apiUrlSearch); //fetches data with new url
 }
