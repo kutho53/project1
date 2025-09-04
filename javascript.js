@@ -66,12 +66,21 @@ function fetchData(api) {
             });
             
             gameDiv.appendChild(wishlistButton);
+
+            const dealButton = document.createElement("a");
+            dealButton.href = `https://www.cheapshark.com/redirect?dealID=${element.dealID}`;
+            dealButton.innerText = "View Deal";
+            dealButton.target = "_blank"; // Opens in a new tab
+            dealButton.classList.add('deal-button'); // For styling
+            gameDiv.appendChild(dealButton);
             
             //adds each game into div element
             apiResponseDiv.appendChild(gameDiv)
         });
     })
 }
+
+console.log(response)
 
 //Search bar code.
 function fetchSearchData(){
