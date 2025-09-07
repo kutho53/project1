@@ -14,6 +14,7 @@ body {
     box-shadow: 0 4px 8px 0 rgb(241, 237, 237);
     transition: 0.3s;
     white-space: nowrap;
+    text-decoration: none;
 }
 #apiResponse { 
     display: grid; 
