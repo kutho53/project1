@@ -140,10 +140,10 @@ input.form-control {
 
 .normal-price {
     font-size: 24px;
-    color: red;
+    color: dark red;
     text-decoration: line-through;
 }
  
 .game-title{
-    font-size: 24px;
+    font-size: 28px;
 }
